@@ -1,0 +1,120 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 480px;
+  width: 100%;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, #ff6b6b, #ffd93d, #6bcb77);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 0.05em;
+}
+
+.subtitle {
+  color: #888;
+  font-size: 0.95rem;
+  margin-top: -1.5rem;
+}
+
+.switch-button {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: none;
+  background: radial-gradient(circle at 35% 35%, #ff4d4d, #b50000);
+  box-shadow:
+    0 8px 0 #7a0000,
+    0 12px 30px rgba(255, 80, 80, 0.4);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  transition: transform 0.1s, box-shadow 0.1s;
+  position: relative;
+}
+
+.switch-button:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 10px 0 #7a0000,
+    0 18px 40px rgba(255, 80, 80, 0.5);
+}
+
+.switch-button:active {
+  transform: translateY(6px);
+  box-shadow:
+    0 2px 0 #7a0000,
+    0 4px 15px rgba(255, 80, 80, 0.3);
+}
+
+.button-emoji {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.button-label {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 0.1em;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0) translateY(6px); }
+  20%       { transform: translateX(-6px) translateY(6px); }
+  40%       { transform: translateX(6px) translateY(6px); }
+  60%       { transform: translateX(-4px) translateY(6px); }
+  80%       { transform: translateX(4px) translateY(6px); }
+}
+
+.switch-button.shake {
+  animation: shake 0.5s ease;
+}
+
+@keyframes glow-pulse {
+  0%   { box-shadow: 0 2px 0 #7a0000, 0 0 60px rgba(255, 80, 80, 0.9); }
+  100% { box-shadow: 0 2px 0 #7a0000, 0 0 10px rgba(255, 80, 80, 0.3); }
+}
+
+.switch-button.glow {
+  animation: glow-pulse 0.8s ease-out;
+}
+
+.message-box {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.2rem 1.6rem;
+  max-width: 100%;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.message {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  white-space: pre-line;
+  text-align: center;
+  color: #eee;
+}
+
+.counter {
+  color: #555;
+  font-size: 0.85rem;
+  text-align: center;
+  min-height: 1.2em;
+}
